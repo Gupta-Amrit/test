@@ -2,4 +2,4 @@
 commit
 let do it
 new
-Release
+commit
