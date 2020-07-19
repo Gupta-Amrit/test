@@ -1,0 +1,12 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workflows_tdp_wi_lp_devops_name": {
+            "value": "LA-Dev-Wi-Devops"
+        },
+        "connections_visualstudioteamservices_externalid": {
+            "value": "/subscriptions/52c470c5-2a70-4ac4-90b1-a63251a6065b/providers/Microsoft.Web/locations/westindia/managedApis/visualstudioteamservices"
+        }
+    }
+}
