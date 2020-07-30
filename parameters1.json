@@ -9,7 +9,7 @@
             "value": "/subscriptions/fed7bc8d-2068-43fb-ba61-9e1a05b7ec85/resourceGroups/tdsit-rg-sit-dat-datpl-01/providers/Microsoft.Web/connections/documentdb"
         },
 	"connections_documentdb_5_name": {
-            "value": "ihcl-cosmosdb"
+            "value": "documentdb"
         }
     }
 }
