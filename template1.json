@@ -310,7 +310,8 @@
                 "displayName": "cdb-tdsit-st-ci-dat-01",
                 "customParameterValues": {},
                 "api": {
-                    "id": "/subscriptions/fed7bc8d-2068-43fb-ba61-9e1a05b7ec85/providers/Microsoft.Web/locations/centralindia/managedApis/', parameters('connections_documentdb_5_name'))]"
+                    "id": "[concat('/subscriptions/fed7bc8d-2068-43fb-ba61-9e1a05b7ec85/providers/Microsoft.Web/locations/centralindia/managedApis/', parameters('connections_documentdb_5_name'))]"
+
                 }
             }
         }
