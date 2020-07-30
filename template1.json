@@ -294,7 +294,8 @@
                         "value": {
                             "documentdb": {
                                 "connectionId": "[parameters('connections_documentdb_5_externalid')]",
-                                "connectionName": "documentdb"
+                                "connectionName": "documentdb",
+                                "id": "/subscriptions/fed7bc8d-2068-43fb-ba61-9e1a05b7ec85/providers/Microsoft.Web/locations/centralindia/managedApis/documentdb"
                             }
                         }
                     }
