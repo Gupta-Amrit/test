@@ -13,6 +13,30 @@
         "connections_documentdb_5_externalid": {
             "defaultValue": "/subscriptions/fed7bc8d-2068-43fb-ba61-9e1a05b7ec85/resourceGroups/tdsit-rg-sit-dat-datpl-01/providers/Microsoft.Web/connections/documentdb",
             "type": "String"
+        },
+        "clientId": {
+            "type": "securestring",
+            "metadata": {
+            "description": "Client (or Application) ID of the Azure Active Directory application."
+            }
+        },
+        "clientSecret": {
+            "type": "securestring",
+            "metadata": {
+            "description": "Client secret of the Azure Active Directory application."
+            }
+        },
+        "tenantId": {
+            "type": "securestring",
+            "metadata": {
+            "description": "The tenant ID of for the Azure Active Directory application."
+            }
+        },
+        "grantType": {
+            "type": "string",
+            "metadata": {
+            "description": "Grant type"
+            },
         }
     },
     "variables": {},
@@ -313,6 +337,12 @@
                 "api": {
                     "id": "[concat('/subscriptions/fed7bc8d-2068-43fb-ba61-9e1a05b7ec85/providers/Microsoft.Web/locations/centralindia/managedApis/', parameters('connections_documentdb_5_name'))]"
 
+                },
+                "parameterValues": {
+                    "token:clientId": "[parameters('clientId')]",
+                    "token:clientSecret": "[parameters('clientSecret')]",
+                    "token:TenantId": "[parameters('tenantId')]",
+                    "token:grantType": "[parameters('grantType')]"
                 }
             }
         }
