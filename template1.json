@@ -15,25 +15,29 @@
 			"type": "String"
 		},
 		"clientId": {
-			"type": "securestring",
+			"type": "string",
+			"defaultValue": "",
 			"metadata": {
 				"description": "Client (or Application) ID of the Azure Active Directory application."
 			}
 		},
 		"clientSecret": {
-			"type": "securestring",
+			"type": "string",
+			defaultValue": "",
 			"metadata": {
 				"description": "Client secret of the Azure Active Directory application."
 			}
 		},
 		"tenantId": {
-			"type": "securestring",
+			"type": "string",
+			defaultValue": "",
 			"metadata": {
 				"description": "The tenant ID of for the Azure Active Directory application."
 			}
 		},
 		"grantType": {
 			"type": "string",
+			defaultValue": "",
 			"metadata": {
 				"description": "Grant type"
 			}
