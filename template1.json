@@ -23,21 +23,21 @@
 		},
 		"clientSecret": {
 			"type": "string",
-			defaultValue": "",
+			"defaultValue": "",
 			"metadata": {
 				"description": "Client secret of the Azure Active Directory application."
 			}
 		},
 		"tenantId": {
 			"type": "string",
-			defaultValue": "",
+			"defaultValue": "",
 			"metadata": {
 				"description": "The tenant ID of for the Azure Active Directory application."
 			}
 		},
 		"grantType": {
 			"type": "string",
-			defaultValue": "",
+			"defaultValue": "",
 			"metadata": {
 				"description": "Grant type"
 			}
