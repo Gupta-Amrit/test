@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workflows_ihcl_card_validation_name": {
+            "value": "lap-tdsit-st-ci-dat-02"
+        },
+        "connections_documentdb_5_externalid": {
+            "value": "/subscriptions/fed7bc8d-2068-43fb-ba61-9e1a05b7ec85/resourceGroups/tdsit-rg-sit-dat-datpl-01/providers/Microsoft.Web/connections/documentdb"
+        },
+	"connections_documentdb_5_name": {
+            "value": "documentdb"
+        }
+    }
+}

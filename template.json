@@ -1,0 +1,79 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workflows_tdp_wi_lp_devops_name": {
+            "defaultValue": "tdp-wi-lp-devops",
+            "type": "String"
+        },
+        "connections_visualstudioteamservices_externalid": {
+            "defaultValue": "/subscriptions/52c470c5-2a70-4ac4-90b1-a63251a6065b/resourceGroups/TDP_Restore/providers/Microsoft.Web/connections/visualstudioteamservices",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Logic/workflows",
+            "apiVersion": "2017-07-01",
+            "name": "[parameters('workflows_tdp_wi_lp_devops_name')]",
+            "location": "westindia",
+            "tags": {
+                "ApllicationName": "CI/CD POC"
+            },
+            "properties": {
+                "state": "Enabled",
+                "definition": {
+                    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {
+                        "$connections": {
+                            "defaultValue": {},
+                            "type": "Object"
+                        }
+                    },
+                    "triggers": {
+                        "manual": {
+                            "type": "Request",
+                            "kind": "Http",
+                            "inputs": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "actions": {
+                        "Queue_a_new_build": {
+                            "runAfter": {},
+                            "type": "ApiConnection",
+                            "inputs": {
+                                "host": {
+                                    "connection": {
+                                        "name": "@parameters('$connections')['visualstudioteamservices']['connectionId']"
+                                    }
+                                },
+                                "method": "post",
+                                "path": "/@{encodeURIComponent('Integration')}/_apis/build/builds",
+                                "queries": {
+                                    "account": "TDL-TCP",
+                                    "buildDefId": "277"
+                                }
+                            }
+                        }
+                    },
+                    "outputs": {}
+                },
+                "parameters": {
+                    "$connections": {
+                        "value": {
+                            "visualstudioteamservices": {
+                                "connectionId": "[parameters('connections_visualstudioteamservices_externalid')]",
+                                "connectionName": "visualstudioteamservices",
+                                "id": "/subscriptions/52c470c5-2a70-4ac4-90b1-a63251a6065b/providers/Microsoft.Web/locations/westindia/managedApis/visualstudioteamservices"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
