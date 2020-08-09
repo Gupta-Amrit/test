@@ -2,5 +2,8 @@ flows:
   b335e911-2c34-4563-9965-234a59058858: {ver: 2, file: demo-flow.snapshot, comments: 'version
       2 comments ', author: anonymous, created: 1596985808791, flowName: demo-flow,
     flowDesc: 'flow description '}
+  db103c84-344e-4e20-b779-95b8408c3cdd: {ver: 1, file: cicd-1.snapshot, comments: cicd-1
+      version comment, author: anonymous, created: 1596985914917, flowName: cicd-1,
+    flowDesc: ''}
 layoutVer: 1
 bucketId: 9e311245-661e-4359-b3f2-bcb658642e82

@@ -1,0 +1,80 @@
+{
+  "header" : {
+    "dataModelVersion" : "3"
+  },
+  "content" : {
+    "flowSnapshot" : {
+      "externalControllerServices" : { },
+      "flowContents" : {
+        "comments" : "",
+        "componentType" : "PROCESS_GROUP",
+        "connections" : [ ],
+        "controllerServices" : [ ],
+        "funnels" : [ ],
+        "identifier" : "0b30a1f3-b051-31fc-b3bd-a802f88a3fc0",
+        "inputPorts" : [ ],
+        "labels" : [ ],
+        "name" : "cicd-1",
+        "outputPorts" : [ ],
+        "position" : {
+          "x" : 272.0,
+          "y" : 336.0
+        },
+        "processGroups" : [ ],
+        "processors" : [ {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-stateful-analysis-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "0b30a1f3-b051-31fc-b3bd-a802f88a3fc0",
+          "identifier" : "28493211-623b-3385-94ef-c24e12a6c288",
+          "name" : "AttributeRollingWindow",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 528.9999981751548,
+            "y" : 198.0000017449318
+          },
+          "properties" : { },
+          "propertyDescriptors" : {
+            "Value to track" : {
+              "displayName" : "Value to track",
+              "identifiesControllerService" : false,
+              "name" : "Value to track",
+              "sensitive" : false
+            },
+            "Time window" : {
+              "displayName" : "Time window",
+              "identifiesControllerService" : false,
+              "name" : "Time window",
+              "sensitive" : false
+            },
+            "Sub-window length" : {
+              "displayName" : "Sub-window length",
+              "identifiesControllerService" : false,
+              "name" : "Sub-window length",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.stateful.analysis.AttributeRollingWindow",
+          "yieldDuration" : "1 sec"
+        } ],
+        "remoteProcessGroups" : [ ],
+        "variables" : { }
+      },
+      "flowEncodingVersion" : "1.0",
+      "parameterContexts" : { }
+    }
+  }
+}
