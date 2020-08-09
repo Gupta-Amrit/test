@@ -1,6 +1,6 @@
 flows:
-  b335e911-2c34-4563-9965-234a59058858: {ver: 1, file: demo-flow.snapshot, comments: flow
-      comments, author: anonymous, created: 1596985512507, flowName: demo-flow, flowDesc: 'flow
-      description '}
+  b335e911-2c34-4563-9965-234a59058858: {ver: 2, file: demo-flow.snapshot, comments: 'version
+      2 comments ', author: anonymous, created: 1596985808791, flowName: demo-flow,
+    flowDesc: 'flow description '}
 layoutVer: 1
 bucketId: 9e311245-661e-4359-b3f2-bcb658642e82

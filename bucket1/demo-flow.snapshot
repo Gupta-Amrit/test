@@ -17,8 +17,8 @@
         "name" : "cicd",
         "outputPorts" : [ ],
         "position" : {
-          "x" : 392.0,
-          "y" : 136.0
+          "x" : 320.0,
+          "y" : 96.0
         },
         "processGroups" : [ ],
         "processors" : [ {
@@ -198,6 +198,156 @@
           "schedulingStrategy" : "TIMER_DRIVEN",
           "style" : { },
           "type" : "org.apache.nifi.processors.aws.s3.ListS3",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-aws-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "9cec6d22-cd32-3c6f-af90-6b98cb2125f7",
+          "identifier" : "0fdebe9b-dcca-3b67-afe2-0e15a4871bf0",
+          "name" : "FetchS3Object",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 620.0,
+            "y" : 55.0
+          },
+          "properties" : {
+            "requester-pays" : "false",
+            "Object Key" : "${filename}",
+            "Signer Override" : "Default Signature",
+            "Communications Timeout" : "30 secs",
+            "Region" : "us-west-2"
+          },
+          "propertyDescriptors" : {
+            "Proxy Host" : {
+              "displayName" : "Proxy Host",
+              "identifiesControllerService" : false,
+              "name" : "Proxy Host",
+              "sensitive" : false
+            },
+            "Access Key" : {
+              "displayName" : "Access Key ID",
+              "identifiesControllerService" : false,
+              "name" : "Access Key",
+              "sensitive" : true
+            },
+            "proxy-configuration-service" : {
+              "displayName" : "Proxy Configuration Service",
+              "identifiesControllerService" : true,
+              "name" : "proxy-configuration-service",
+              "sensitive" : false
+            },
+            "Endpoint Override URL" : {
+              "displayName" : "Endpoint Override URL",
+              "identifiesControllerService" : false,
+              "name" : "Endpoint Override URL",
+              "sensitive" : false
+            },
+            "requester-pays" : {
+              "displayName" : "Requester Pays",
+              "identifiesControllerService" : false,
+              "name" : "requester-pays",
+              "sensitive" : false
+            },
+            "Object Key" : {
+              "displayName" : "Object Key",
+              "identifiesControllerService" : false,
+              "name" : "Object Key",
+              "sensitive" : false
+            },
+            "AWS Credentials Provider service" : {
+              "displayName" : "AWS Credentials Provider service",
+              "identifiesControllerService" : true,
+              "name" : "AWS Credentials Provider service",
+              "sensitive" : false
+            },
+            "SSL Context Service" : {
+              "displayName" : "SSL Context Service",
+              "identifiesControllerService" : true,
+              "name" : "SSL Context Service",
+              "sensitive" : false
+            },
+            "Signer Override" : {
+              "displayName" : "Signer Override",
+              "identifiesControllerService" : false,
+              "name" : "Signer Override",
+              "sensitive" : false
+            },
+            "Bucket" : {
+              "displayName" : "Bucket",
+              "identifiesControllerService" : false,
+              "name" : "Bucket",
+              "sensitive" : false
+            },
+            "Version" : {
+              "displayName" : "Version",
+              "identifiesControllerService" : false,
+              "name" : "Version",
+              "sensitive" : false
+            },
+            "proxy-user-password" : {
+              "displayName" : "Proxy Password",
+              "identifiesControllerService" : false,
+              "name" : "proxy-user-password",
+              "sensitive" : true
+            },
+            "Communications Timeout" : {
+              "displayName" : "Communications Timeout",
+              "identifiesControllerService" : false,
+              "name" : "Communications Timeout",
+              "sensitive" : false
+            },
+            "Region" : {
+              "displayName" : "Region",
+              "identifiesControllerService" : false,
+              "name" : "Region",
+              "sensitive" : false
+            },
+            "Secret Key" : {
+              "displayName" : "Secret Access Key",
+              "identifiesControllerService" : false,
+              "name" : "Secret Key",
+              "sensitive" : true
+            },
+            "Credentials File" : {
+              "displayName" : "Credentials File",
+              "identifiesControllerService" : false,
+              "name" : "Credentials File",
+              "sensitive" : false
+            },
+            "proxy-user-name" : {
+              "displayName" : "Proxy Username",
+              "identifiesControllerService" : false,
+              "name" : "proxy-user-name",
+              "sensitive" : false
+            },
+            "Proxy Host Port" : {
+              "displayName" : "Proxy Host Port",
+              "identifiesControllerService" : false,
+              "name" : "Proxy Host Port",
+              "sensitive" : false
+            },
+            "encryption-service" : {
+              "displayName" : "Encryption Service",
+              "identifiesControllerService" : true,
+              "name" : "encryption-service",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.aws.s3.FetchS3Object",
           "yieldDuration" : "1 sec"
         } ],
         "remoteProcessGroups" : [ ],
