@@ -1,0 +1,212 @@
+{
+  "header" : {
+    "dataModelVersion" : "3"
+  },
+  "content" : {
+    "flowSnapshot" : {
+      "externalControllerServices" : { },
+      "flowContents" : {
+        "comments" : "",
+        "componentType" : "PROCESS_GROUP",
+        "connections" : [ ],
+        "controllerServices" : [ ],
+        "funnels" : [ ],
+        "identifier" : "9cec6d22-cd32-3c6f-af90-6b98cb2125f7",
+        "inputPorts" : [ ],
+        "labels" : [ ],
+        "name" : "cicd",
+        "outputPorts" : [ ],
+        "position" : {
+          "x" : 392.0,
+          "y" : 136.0
+        },
+        "processGroups" : [ ],
+        "processors" : [ {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-aws-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "PRIMARY",
+          "groupIdentifier" : "9cec6d22-cd32-3c6f-af90-6b98cb2125f7",
+          "identifier" : "1a04e589-8b53-3325-b8c1-0f358245a472",
+          "name" : "ListS3",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 392.0,
+            "y" : 112.0
+          },
+          "properties" : {
+            "write-s3-user-metadata" : "false",
+            "list-type" : "1",
+            "requester-pays" : "false",
+            "write-s3-object-tags" : "false",
+            "Signer Override" : "Default Signature",
+            "Communications Timeout" : "30 secs",
+            "Region" : "us-west-2",
+            "min-age" : "0 sec",
+            "use-versions" : "false"
+          },
+          "propertyDescriptors" : {
+            "write-s3-user-metadata" : {
+              "displayName" : "Write User Metadata",
+              "identifiesControllerService" : false,
+              "name" : "write-s3-user-metadata",
+              "sensitive" : false
+            },
+            "Proxy Host" : {
+              "displayName" : "Proxy Host",
+              "identifiesControllerService" : false,
+              "name" : "Proxy Host",
+              "sensitive" : false
+            },
+            "list-type" : {
+              "displayName" : "List Type",
+              "identifiesControllerService" : false,
+              "name" : "list-type",
+              "sensitive" : false
+            },
+            "Access Key" : {
+              "displayName" : "Access Key ID",
+              "identifiesControllerService" : false,
+              "name" : "Access Key",
+              "sensitive" : true
+            },
+            "prefix" : {
+              "displayName" : "Prefix",
+              "identifiesControllerService" : false,
+              "name" : "prefix",
+              "sensitive" : false
+            },
+            "proxy-configuration-service" : {
+              "displayName" : "Proxy Configuration Service",
+              "identifiesControllerService" : true,
+              "name" : "proxy-configuration-service",
+              "sensitive" : false
+            },
+            "Endpoint Override URL" : {
+              "displayName" : "Endpoint Override URL",
+              "identifiesControllerService" : false,
+              "name" : "Endpoint Override URL",
+              "sensitive" : false
+            },
+            "requester-pays" : {
+              "displayName" : "Requester Pays",
+              "identifiesControllerService" : false,
+              "name" : "requester-pays",
+              "sensitive" : false
+            },
+            "AWS Credentials Provider service" : {
+              "displayName" : "AWS Credentials Provider service",
+              "identifiesControllerService" : true,
+              "name" : "AWS Credentials Provider service",
+              "sensitive" : false
+            },
+            "SSL Context Service" : {
+              "displayName" : "SSL Context Service",
+              "identifiesControllerService" : true,
+              "name" : "SSL Context Service",
+              "sensitive" : false
+            },
+            "write-s3-object-tags" : {
+              "displayName" : "Write Object Tags",
+              "identifiesControllerService" : false,
+              "name" : "write-s3-object-tags",
+              "sensitive" : false
+            },
+            "Signer Override" : {
+              "displayName" : "Signer Override",
+              "identifiesControllerService" : false,
+              "name" : "Signer Override",
+              "sensitive" : false
+            },
+            "Bucket" : {
+              "displayName" : "Bucket",
+              "identifiesControllerService" : false,
+              "name" : "Bucket",
+              "sensitive" : false
+            },
+            "delimiter" : {
+              "displayName" : "Delimiter",
+              "identifiesControllerService" : false,
+              "name" : "delimiter",
+              "sensitive" : false
+            },
+            "proxy-user-password" : {
+              "displayName" : "Proxy Password",
+              "identifiesControllerService" : false,
+              "name" : "proxy-user-password",
+              "sensitive" : true
+            },
+            "Communications Timeout" : {
+              "displayName" : "Communications Timeout",
+              "identifiesControllerService" : false,
+              "name" : "Communications Timeout",
+              "sensitive" : false
+            },
+            "Region" : {
+              "displayName" : "Region",
+              "identifiesControllerService" : false,
+              "name" : "Region",
+              "sensitive" : false
+            },
+            "Secret Key" : {
+              "displayName" : "Secret Access Key",
+              "identifiesControllerService" : false,
+              "name" : "Secret Key",
+              "sensitive" : true
+            },
+            "Credentials File" : {
+              "displayName" : "Credentials File",
+              "identifiesControllerService" : false,
+              "name" : "Credentials File",
+              "sensitive" : false
+            },
+            "proxy-user-name" : {
+              "displayName" : "Proxy Username",
+              "identifiesControllerService" : false,
+              "name" : "proxy-user-name",
+              "sensitive" : false
+            },
+            "min-age" : {
+              "displayName" : "Minimum Object Age",
+              "identifiesControllerService" : false,
+              "name" : "min-age",
+              "sensitive" : false
+            },
+            "Proxy Host Port" : {
+              "displayName" : "Proxy Host Port",
+              "identifiesControllerService" : false,
+              "name" : "Proxy Host Port",
+              "sensitive" : false
+            },
+            "use-versions" : {
+              "displayName" : "Use Versions",
+              "identifiesControllerService" : false,
+              "name" : "use-versions",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.aws.s3.ListS3",
+          "yieldDuration" : "1 sec"
+        } ],
+        "remoteProcessGroups" : [ ],
+        "variables" : {
+          "s3-bucket-name" : "sit"
+        }
+      },
+      "flowEncodingVersion" : "1.0",
+      "parameterContexts" : { }
+    }
+  }
+}
