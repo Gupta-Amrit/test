@@ -1,2 +1,2 @@
 # Readme
-POC on gitlab github mirroring 
+POC on gitlab github mirroring.
