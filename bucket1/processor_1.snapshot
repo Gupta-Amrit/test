@@ -84,6 +84,48 @@
           "autoTerminatedRelationships" : [ ],
           "bulletinLevel" : "WARN",
           "bundle" : {
+            "artifact" : "nifi-websocket-processors-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "a683191d-0030-3b21-9941-add69d7102bd",
+          "identifier" : "1a8439df-347c-3b4e-855f-31069b5b5c68",
+          "name" : "ConnectWebSocket",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 451.0,
+            "y" : 359.0
+          },
+          "properties" : { },
+          "propertyDescriptors" : {
+            "websocket-client-controller-service" : {
+              "displayName" : "WebSocket Client ControllerService",
+              "identifiesControllerService" : true,
+              "name" : "websocket-client-controller-service",
+              "sensitive" : false
+            },
+            "websocket-client-id" : {
+              "displayName" : "WebSocket Client Id",
+              "identifiesControllerService" : false,
+              "name" : "websocket-client-id",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.websocket.ConnectWebSocket",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
             "artifact" : "nifi-stateful-analysis-nar",
             "group" : "org.apache.nifi",
             "version" : "1.11.4"
