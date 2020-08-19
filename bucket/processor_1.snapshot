@@ -11,17 +11,80 @@
         "connections" : [ ],
         "controllerServices" : [ ],
         "funnels" : [ ],
-        "identifier" : "a683191d-0030-3b21-9941-add69d7102bd",
+        "identifier" : "9ed04f5e-afde-367f-ae62-9337350d9679",
         "inputPorts" : [ ],
         "labels" : [ ],
         "name" : "datapipeline",
         "outputPorts" : [ ],
         "position" : {
-          "x" : 392.0,
-          "y" : 128.0
+          "x" : 368.0,
+          "y" : 136.0
         },
         "processGroups" : [ ],
         "processors" : [ {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-cybersecurity-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "9ed04f5e-afde-367f-ae62-9337350d9679",
+          "identifier" : "775d494b-4487-3d63-a8d2-d6fbcfbd2ef7",
+          "name" : "CompareFuzzyHash",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 1030.0,
+            "y" : 373.0
+          },
+          "properties" : {
+            "ATTRIBUTE_NAME" : "fuzzyhash.value",
+            "MATCHING_MODE" : "single"
+          },
+          "propertyDescriptors" : {
+            "ATTRIBUTE_NAME" : {
+              "displayName" : "Hash Attribute Name",
+              "identifiesControllerService" : false,
+              "name" : "ATTRIBUTE_NAME",
+              "sensitive" : false
+            },
+            "HASH_LIST_FILE" : {
+              "displayName" : "Hash List source file",
+              "identifiesControllerService" : false,
+              "name" : "HASH_LIST_FILE",
+              "sensitive" : false
+            },
+            "HASH_ALGORITHM" : {
+              "displayName" : "Hashing Algorithm",
+              "identifiesControllerService" : false,
+              "name" : "HASH_ALGORITHM",
+              "sensitive" : false
+            },
+            "MATCH_THRESHOLD" : {
+              "displayName" : "Match threshold",
+              "identifiesControllerService" : false,
+              "name" : "MATCH_THRESHOLD",
+              "sensitive" : false
+            },
+            "MATCHING_MODE" : {
+              "displayName" : "Matching mode",
+              "identifiesControllerService" : false,
+              "name" : "MATCHING_MODE",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.cybersecurity.CompareFuzzyHash",
+          "yieldDuration" : "1 sec"
+        }, {
           "autoTerminatedRelationships" : [ ],
           "bulletinLevel" : "WARN",
           "bundle" : {
@@ -33,85 +96,28 @@
           "componentType" : "PROCESSOR",
           "concurrentlySchedulableTaskCount" : 1,
           "executionNode" : "ALL",
-          "groupIdentifier" : "a683191d-0030-3b21-9941-add69d7102bd",
-          "identifier" : "1aebf81d-12ab-3352-baf1-d27e3e52ba2b",
-          "name" : "CompressContent",
+          "groupIdentifier" : "9ed04f5e-afde-367f-ae62-9337350d9679",
+          "identifier" : "e7841e00-950a-367a-8e3f-6c28ba750d23",
+          "name" : "CalculateRecordStats",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : 993.0,
-            "y" : 273.0
+            "x" : 618.0,
+            "y" : 79.0
           },
           "properties" : {
-            "Compression Format" : "use mime.type attribute",
-            "Mode" : "compress",
-            "Compression Level" : "1",
-            "Update Filename" : "false"
+            "record-stats-limit" : "10"
           },
           "propertyDescriptors" : {
-            "Compression Format" : {
-              "displayName" : "Compression Format",
+            "record-stats-limit" : {
+              "displayName" : "record-stats-limit",
               "identifiesControllerService" : false,
-              "name" : "Compression Format",
+              "name" : "record-stats-limit",
               "sensitive" : false
             },
-            "Mode" : {
-              "displayName" : "Mode",
-              "identifiesControllerService" : false,
-              "name" : "Mode",
-              "sensitive" : false
-            },
-            "Compression Level" : {
-              "displayName" : "Compression Level",
-              "identifiesControllerService" : false,
-              "name" : "Compression Level",
-              "sensitive" : false
-            },
-            "Update Filename" : {
-              "displayName" : "Update Filename",
-              "identifiesControllerService" : false,
-              "name" : "Update Filename",
-              "sensitive" : false
-            }
-          },
-          "runDurationMillis" : 0,
-          "scheduledState" : "ENABLED",
-          "schedulingPeriod" : "0 sec",
-          "schedulingStrategy" : "TIMER_DRIVEN",
-          "style" : { },
-          "type" : "org.apache.nifi.processors.standard.CompressContent",
-          "yieldDuration" : "1 sec"
-        }, {
-          "autoTerminatedRelationships" : [ ],
-          "bulletinLevel" : "WARN",
-          "bundle" : {
-            "artifact" : "nifi-websocket-processors-nar",
-            "group" : "org.apache.nifi",
-            "version" : "1.11.4"
-          },
-          "comments" : "",
-          "componentType" : "PROCESSOR",
-          "concurrentlySchedulableTaskCount" : 1,
-          "executionNode" : "ALL",
-          "groupIdentifier" : "a683191d-0030-3b21-9941-add69d7102bd",
-          "identifier" : "1a8439df-347c-3b4e-855f-31069b5b5c68",
-          "name" : "ConnectWebSocket",
-          "penaltyDuration" : "30 sec",
-          "position" : {
-            "x" : 451.0,
-            "y" : 359.0
-          },
-          "properties" : { },
-          "propertyDescriptors" : {
-            "websocket-client-controller-service" : {
-              "displayName" : "WebSocket Client ControllerService",
+            "record-stats-reader" : {
+              "displayName" : "Record Reader",
               "identifiesControllerService" : true,
-              "name" : "websocket-client-controller-service",
-              "sensitive" : false
-            },
-            "websocket-client-id" : {
-              "displayName" : "WebSocket Client Id",
-              "identifiesControllerService" : false,
-              "name" : "websocket-client-id",
+              "name" : "record-stats-reader",
               "sensitive" : false
             }
           },
@@ -120,7 +126,7 @@
           "schedulingPeriod" : "0 sec",
           "schedulingStrategy" : "TIMER_DRIVEN",
           "style" : { },
-          "type" : "org.apache.nifi.processors.websocket.ConnectWebSocket",
+          "type" : "org.apache.nifi.processors.standard.CalculateRecordStats",
           "yieldDuration" : "1 sec"
         }, {
           "autoTerminatedRelationships" : [ ],
@@ -134,7 +140,7 @@
           "componentType" : "PROCESSOR",
           "concurrentlySchedulableTaskCount" : 1,
           "executionNode" : "ALL",
-          "groupIdentifier" : "a683191d-0030-3b21-9941-add69d7102bd",
+          "groupIdentifier" : "9ed04f5e-afde-367f-ae62-9337350d9679",
           "identifier" : "1ec9ce4d-a20f-374e-9880-2ab00468b5c7",
           "name" : "AttributeRollingWindow",
           "penaltyDuration" : "30 sec",
@@ -174,7 +180,7 @@
           "autoTerminatedRelationships" : [ ],
           "bulletinLevel" : "WARN",
           "bundle" : {
-            "artifact" : "nifi-cdc-mysql-nar",
+            "artifact" : "nifi-standard-nar",
             "group" : "org.apache.nifi",
             "version" : "1.11.4"
           },
@@ -182,123 +188,48 @@
           "componentType" : "PROCESSOR",
           "concurrentlySchedulableTaskCount" : 1,
           "executionNode" : "ALL",
-          "groupIdentifier" : "a683191d-0030-3b21-9941-add69d7102bd",
-          "identifier" : "50331a03-e100-3aa5-9326-5cc468d94762",
-          "name" : "CaptureChangeMySQL",
+          "groupIdentifier" : "9ed04f5e-afde-367f-ae62-9337350d9679",
+          "identifier" : "79520bf8-0674-3d3f-952a-a8c36c57c88e",
+          "name" : "AttributesToJSON",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : 509.0,
-            "y" : 481.0
+            "x" : 1118.0,
+            "y" : 109.0
           },
           "properties" : {
-            "capture-change-mysql-include-ddl-events" : "false",
-            "capture-change-mysql-driver-class" : "com.mysql.jdbc.Driver",
-            "capture-change-mysql-include-begin-commit" : "false",
-            "capture-change-mysql-retrieve-all-records" : "true",
-            "capture-change-mysql-state-update-interval" : "0 seconds",
-            "capture-change-mysql-max-wait-time" : "30 seconds"
+            "Destination" : "flowfile-attribute",
+            "Null Value" : "false",
+            "Include Core Attributes" : "true"
           },
           "propertyDescriptors" : {
-            "capture-change-mysql-include-ddl-events" : {
-              "displayName" : "Include DDL Events",
+            "attributes-to-json-regex" : {
+              "displayName" : "Attributes Regular Expression",
               "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-include-ddl-events",
+              "name" : "attributes-to-json-regex",
               "sensitive" : false
             },
-            "capture-change-mysql-db-name-pattern" : {
-              "displayName" : "Database/Schema Name Pattern",
+            "Destination" : {
+              "displayName" : "Destination",
               "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-db-name-pattern",
+              "name" : "Destination",
               "sensitive" : false
             },
-            "capture-change-mysql-dist-map-cache-client" : {
-              "displayName" : "Distributed Map Cache Client",
-              "identifiesControllerService" : true,
-              "name" : "capture-change-mysql-dist-map-cache-client",
+            "Null Value" : {
+              "displayName" : "Null Value",
+              "identifiesControllerService" : false,
+              "name" : "Null Value",
               "sensitive" : false
             },
-            "capture-change-mysql-init-seq-id" : {
-              "displayName" : "Initial Sequence ID",
+            "Attributes List" : {
+              "displayName" : "Attributes List",
               "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-init-seq-id",
+              "name" : "Attributes List",
               "sensitive" : false
             },
-            "capture-change-mysql-name-pattern" : {
-              "displayName" : "Table Name Pattern",
+            "Include Core Attributes" : {
+              "displayName" : "Include Core Attributes",
               "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-name-pattern",
-              "sensitive" : false
-            },
-            "capture-change-mysql-driver-class" : {
-              "displayName" : "MySQL Driver Class Name",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-driver-class",
-              "sensitive" : false
-            },
-            "capture-change-mysql-driver-locations" : {
-              "displayName" : "MySQL Driver Location(s)",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-driver-locations",
-              "sensitive" : false
-            },
-            "capture-change-mysql-include-begin-commit" : {
-              "displayName" : "Include Begin/Commit Events",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-include-begin-commit",
-              "sensitive" : false
-            },
-            "capture-change-mysql-server-id" : {
-              "displayName" : "Server ID",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-server-id",
-              "sensitive" : false
-            },
-            "capture-change-mysql-init-binlog-filename" : {
-              "displayName" : "Initial Binlog Filename",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-init-binlog-filename",
-              "sensitive" : false
-            },
-            "capture-change-mysql-init-binlog-position" : {
-              "displayName" : "Initial Binlog Position",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-init-binlog-position",
-              "sensitive" : false
-            },
-            "capture-change-mysql-hosts" : {
-              "displayName" : "MySQL Hosts",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-hosts",
-              "sensitive" : false
-            },
-            "capture-change-mysql-username" : {
-              "displayName" : "Username",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-username",
-              "sensitive" : false
-            },
-            "capture-change-mysql-retrieve-all-records" : {
-              "displayName" : "Retrieve All Records",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-retrieve-all-records",
-              "sensitive" : false
-            },
-            "capture-change-mysql-state-update-interval" : {
-              "displayName" : "State Update Interval",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-state-update-interval",
-              "sensitive" : false
-            },
-            "capture-change-mysql-password" : {
-              "displayName" : "Password",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-password",
-              "sensitive" : true
-            },
-            "capture-change-mysql-max-wait-time" : {
-              "displayName" : "Max Wait Time",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-max-wait-time",
+              "name" : "Include Core Attributes",
               "sensitive" : false
             }
           },
@@ -307,7 +238,7 @@
           "schedulingPeriod" : "0 sec",
           "schedulingStrategy" : "TIMER_DRIVEN",
           "style" : { },
-          "type" : "org.apache.nifi.cdc.mysql.processors.CaptureChangeMySQL",
+          "type" : "org.apache.nifi.processors.standard.AttributesToJSON",
           "yieldDuration" : "1 sec"
         }, {
           "autoTerminatedRelationships" : [ ],
@@ -321,7 +252,7 @@
           "componentType" : "PROCESSOR",
           "concurrentlySchedulableTaskCount" : 1,
           "executionNode" : "ALL",
-          "groupIdentifier" : "a683191d-0030-3b21-9941-add69d7102bd",
+          "groupIdentifier" : "9ed04f5e-afde-367f-ae62-9337350d9679",
           "identifier" : "cfe35a7a-8d70-336a-bd4e-28308ba7fb48",
           "name" : "AttributesToJSON",
           "penaltyDuration" : "30 sec",
@@ -385,7 +316,129 @@
           "componentType" : "PROCESSOR",
           "concurrentlySchedulableTaskCount" : 1,
           "executionNode" : "ALL",
-          "groupIdentifier" : "a683191d-0030-3b21-9941-add69d7102bd",
+          "groupIdentifier" : "9ed04f5e-afde-367f-ae62-9337350d9679",
+          "identifier" : "51cbd856-65cb-3c8d-8962-796cc942f7a1",
+          "name" : "CompressContent",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 592.0,
+            "y" : 213.0
+          },
+          "properties" : {
+            "Compression Format" : "use mime.type attribute",
+            "Mode" : "compress",
+            "Compression Level" : "1",
+            "Update Filename" : "false"
+          },
+          "propertyDescriptors" : {
+            "Compression Format" : {
+              "displayName" : "Compression Format",
+              "identifiesControllerService" : false,
+              "name" : "Compression Format",
+              "sensitive" : false
+            },
+            "Mode" : {
+              "displayName" : "Mode",
+              "identifiesControllerService" : false,
+              "name" : "Mode",
+              "sensitive" : false
+            },
+            "Compression Level" : {
+              "displayName" : "Compression Level",
+              "identifiesControllerService" : false,
+              "name" : "Compression Level",
+              "sensitive" : false
+            },
+            "Update Filename" : {
+              "displayName" : "Update Filename",
+              "identifiesControllerService" : false,
+              "name" : "Update Filename",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.CompressContent",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-cybersecurity-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "9ed04f5e-afde-367f-ae62-9337350d9679",
+          "identifier" : "ed6b9d25-64b6-31ee-a1ed-017dbb43b00e",
+          "name" : "CompareFuzzyHash",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 868.0,
+            "y" : 214.0
+          },
+          "properties" : {
+            "ATTRIBUTE_NAME" : "fuzzyhash.value",
+            "MATCHING_MODE" : "single"
+          },
+          "propertyDescriptors" : {
+            "ATTRIBUTE_NAME" : {
+              "displayName" : "Hash Attribute Name",
+              "identifiesControllerService" : false,
+              "name" : "ATTRIBUTE_NAME",
+              "sensitive" : false
+            },
+            "HASH_LIST_FILE" : {
+              "displayName" : "Hash List source file",
+              "identifiesControllerService" : false,
+              "name" : "HASH_LIST_FILE",
+              "sensitive" : false
+            },
+            "HASH_ALGORITHM" : {
+              "displayName" : "Hashing Algorithm",
+              "identifiesControllerService" : false,
+              "name" : "HASH_ALGORITHM",
+              "sensitive" : false
+            },
+            "MATCH_THRESHOLD" : {
+              "displayName" : "Match threshold",
+              "identifiesControllerService" : false,
+              "name" : "MATCH_THRESHOLD",
+              "sensitive" : false
+            },
+            "MATCHING_MODE" : {
+              "displayName" : "Matching mode",
+              "identifiesControllerService" : false,
+              "name" : "MATCHING_MODE",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.cybersecurity.CompareFuzzyHash",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "9ed04f5e-afde-367f-ae62-9337350d9679",
           "identifier" : "28d456ef-a870-37bb-ab17-e8d099b62bac",
           "name" : "AttributesToCSV",
           "penaltyDuration" : "30 sec",
