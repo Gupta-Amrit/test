@@ -1,6 +1,6 @@
 flows:
-  e298218e-f8bf-46b4-b879-75647c1d771c: {ver: 1, file: workflow_1.snapshot, comments: version
-      1 from SIT, author: t_amrit.gupta@tatadigital.com, created: 1597941347332, flowName: workflow
+  e298218e-f8bf-46b4-b879-75647c1d771c: {ver: 2, file: workflow_1.snapshot, comments: version
+      2 from SIT, author: t_amrit.gupta@tatadigital.com, created: 1597941523155, flowName: workflow
       1, flowDesc: this is a test workflow}
 layoutVer: 1
 bucketId: 4b761c93-7788-48d2-a7f5-093f0803e63e
