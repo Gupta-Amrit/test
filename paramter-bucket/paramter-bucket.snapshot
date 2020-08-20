@@ -26,6 +26,145 @@
           "autoTerminatedRelationships" : [ ],
           "bulletinLevel" : "WARN",
           "bundle" : {
+            "artifact" : "nifi-cdc-mysql-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "5e1cb00e-86fb-331d-920f-cf71e699bd57",
+          "identifier" : "82f82c1c-d885-30a1-b4f9-ddf97da51bd4",
+          "name" : "CaptureChangeMySQL",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 298.0,
+            "y" : 112.0
+          },
+          "properties" : {
+            "capture-change-mysql-include-ddl-events" : "false",
+            "capture-change-mysql-driver-class" : "com.mysql.jdbc.Driver",
+            "capture-change-mysql-include-begin-commit" : "false",
+            "capture-change-mysql-retrieve-all-records" : "true",
+            "capture-change-mysql-state-update-interval" : "0 seconds",
+            "capture-change-mysql-max-wait-time" : "30 seconds"
+          },
+          "propertyDescriptors" : {
+            "capture-change-mysql-include-ddl-events" : {
+              "displayName" : "Include DDL Events",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-include-ddl-events",
+              "sensitive" : false
+            },
+            "capture-change-mysql-db-name-pattern" : {
+              "displayName" : "Database/Schema Name Pattern",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-db-name-pattern",
+              "sensitive" : false
+            },
+            "capture-change-mysql-dist-map-cache-client" : {
+              "displayName" : "Distributed Map Cache Client",
+              "identifiesControllerService" : true,
+              "name" : "capture-change-mysql-dist-map-cache-client",
+              "sensitive" : false
+            },
+            "capture-change-mysql-init-seq-id" : {
+              "displayName" : "Initial Sequence ID",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-init-seq-id",
+              "sensitive" : false
+            },
+            "capture-change-mysql-name-pattern" : {
+              "displayName" : "Table Name Pattern",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-name-pattern",
+              "sensitive" : false
+            },
+            "capture-change-mysql-driver-class" : {
+              "displayName" : "MySQL Driver Class Name",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-driver-class",
+              "sensitive" : false
+            },
+            "capture-change-mysql-driver-locations" : {
+              "displayName" : "MySQL Driver Location(s)",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-driver-locations",
+              "sensitive" : false
+            },
+            "capture-change-mysql-include-begin-commit" : {
+              "displayName" : "Include Begin/Commit Events",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-include-begin-commit",
+              "sensitive" : false
+            },
+            "capture-change-mysql-server-id" : {
+              "displayName" : "Server ID",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-server-id",
+              "sensitive" : false
+            },
+            "capture-change-mysql-init-binlog-filename" : {
+              "displayName" : "Initial Binlog Filename",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-init-binlog-filename",
+              "sensitive" : false
+            },
+            "capture-change-mysql-init-binlog-position" : {
+              "displayName" : "Initial Binlog Position",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-init-binlog-position",
+              "sensitive" : false
+            },
+            "capture-change-mysql-hosts" : {
+              "displayName" : "MySQL Hosts",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-hosts",
+              "sensitive" : false
+            },
+            "capture-change-mysql-username" : {
+              "displayName" : "Username",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-username",
+              "sensitive" : false
+            },
+            "capture-change-mysql-retrieve-all-records" : {
+              "displayName" : "Retrieve All Records",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-retrieve-all-records",
+              "sensitive" : false
+            },
+            "capture-change-mysql-state-update-interval" : {
+              "displayName" : "State Update Interval",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-state-update-interval",
+              "sensitive" : false
+            },
+            "capture-change-mysql-password" : {
+              "displayName" : "Password",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-password",
+              "sensitive" : true
+            },
+            "capture-change-mysql-max-wait-time" : {
+              "displayName" : "Max Wait Time",
+              "identifiesControllerService" : false,
+              "name" : "capture-change-mysql-max-wait-time",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.cdc.mysql.processors.CaptureChangeMySQL",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
             "artifact" : "nifi-aws-nar",
             "group" : "org.apache.nifi",
             "version" : "1.11.4"
