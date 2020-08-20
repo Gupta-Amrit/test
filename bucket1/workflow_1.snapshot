@@ -26,69 +26,6 @@
           "autoTerminatedRelationships" : [ ],
           "bulletinLevel" : "WARN",
           "bundle" : {
-            "artifact" : "nifi-cybersecurity-nar",
-            "group" : "org.apache.nifi",
-            "version" : "1.11.4"
-          },
-          "comments" : "",
-          "componentType" : "PROCESSOR",
-          "concurrentlySchedulableTaskCount" : 1,
-          "executionNode" : "ALL",
-          "groupIdentifier" : "dec229b9-ab08-3824-a48e-1e593c26ef8e",
-          "identifier" : "ae225f08-f18b-3f25-988a-2da68f16bbad",
-          "name" : "CompareFuzzyHash",
-          "penaltyDuration" : "30 sec",
-          "position" : {
-            "x" : 321.0,
-            "y" : 75.0
-          },
-          "properties" : {
-            "ATTRIBUTE_NAME" : "fuzzyhash.value",
-            "MATCHING_MODE" : "single"
-          },
-          "propertyDescriptors" : {
-            "ATTRIBUTE_NAME" : {
-              "displayName" : "Hash Attribute Name",
-              "identifiesControllerService" : false,
-              "name" : "ATTRIBUTE_NAME",
-              "sensitive" : false
-            },
-            "HASH_LIST_FILE" : {
-              "displayName" : "Hash List source file",
-              "identifiesControllerService" : false,
-              "name" : "HASH_LIST_FILE",
-              "sensitive" : false
-            },
-            "HASH_ALGORITHM" : {
-              "displayName" : "Hashing Algorithm",
-              "identifiesControllerService" : false,
-              "name" : "HASH_ALGORITHM",
-              "sensitive" : false
-            },
-            "MATCH_THRESHOLD" : {
-              "displayName" : "Match threshold",
-              "identifiesControllerService" : false,
-              "name" : "MATCH_THRESHOLD",
-              "sensitive" : false
-            },
-            "MATCHING_MODE" : {
-              "displayName" : "Matching mode",
-              "identifiesControllerService" : false,
-              "name" : "MATCHING_MODE",
-              "sensitive" : false
-            }
-          },
-          "runDurationMillis" : 0,
-          "scheduledState" : "ENABLED",
-          "schedulingPeriod" : "0 sec",
-          "schedulingStrategy" : "TIMER_DRIVEN",
-          "style" : { },
-          "type" : "org.apache.nifi.processors.cybersecurity.CompareFuzzyHash",
-          "yieldDuration" : "1 sec"
-        }, {
-          "autoTerminatedRelationships" : [ ],
-          "bulletinLevel" : "WARN",
-          "bundle" : {
             "artifact" : "nifi-standard-nar",
             "group" : "org.apache.nifi",
             "version" : "1.11.4"
@@ -98,54 +35,21 @@
           "concurrentlySchedulableTaskCount" : 1,
           "executionNode" : "ALL",
           "groupIdentifier" : "dec229b9-ab08-3824-a48e-1e593c26ef8e",
-          "identifier" : "2c0c90d1-f55c-327d-abce-b6f7ff20b15b",
-          "name" : "AttributesToCSV",
+          "identifier" : "a35ac019-575a-3659-a5ee-ce7c92300c05",
+          "name" : "Base64EncodeContent",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : 388.0,
-            "y" : 100.0
+            "x" : 426.0,
+            "y" : 155.0
           },
           "properties" : {
-            "null-value" : "false",
-            "include-core-attributes" : "true",
-            "destination" : "flowfile-attribute",
-            "include-schema" : "false"
+            "Mode" : "Encode"
           },
           "propertyDescriptors" : {
-            "null-value" : {
-              "displayName" : "Null Value",
+            "Mode" : {
+              "displayName" : "Mode",
               "identifiesControllerService" : false,
-              "name" : "null-value",
-              "sensitive" : false
-            },
-            "include-core-attributes" : {
-              "displayName" : "Include Core Attributes",
-              "identifiesControllerService" : false,
-              "name" : "include-core-attributes",
-              "sensitive" : false
-            },
-            "attributes-regex" : {
-              "displayName" : "Attributes Regular Expression",
-              "identifiesControllerService" : false,
-              "name" : "attributes-regex",
-              "sensitive" : false
-            },
-            "destination" : {
-              "displayName" : "Destination",
-              "identifiesControllerService" : false,
-              "name" : "destination",
-              "sensitive" : false
-            },
-            "include-schema" : {
-              "displayName" : "Include Schema",
-              "identifiesControllerService" : false,
-              "name" : "include-schema",
-              "sensitive" : false
-            },
-            "attribute-list" : {
-              "displayName" : "Attribute List",
-              "identifiesControllerService" : false,
-              "name" : "attribute-list",
+              "name" : "Mode",
               "sensitive" : false
             }
           },
@@ -154,118 +58,7 @@
           "schedulingPeriod" : "0 sec",
           "schedulingStrategy" : "TIMER_DRIVEN",
           "style" : { },
-          "type" : "org.apache.nifi.processors.standard.AttributesToCSV",
-          "yieldDuration" : "1 sec"
-        }, {
-          "autoTerminatedRelationships" : [ ],
-          "bulletinLevel" : "WARN",
-          "bundle" : {
-            "artifact" : "nifi-amqp-nar",
-            "group" : "org.apache.nifi",
-            "version" : "1.11.4"
-          },
-          "comments" : "",
-          "componentType" : "PROCESSOR",
-          "concurrentlySchedulableTaskCount" : 1,
-          "executionNode" : "ALL",
-          "groupIdentifier" : "dec229b9-ab08-3824-a48e-1e593c26ef8e",
-          "identifier" : "b0760bb2-afda-3eee-a533-2be1b040cb66",
-          "name" : "ConsumeAMQP",
-          "penaltyDuration" : "30 sec",
-          "position" : {
-            "x" : 305.0,
-            "y" : 199.0
-          },
-          "properties" : {
-            "AMQP Version" : "0.9.1",
-            "User Name" : "guest",
-            "ssl-client-auth" : "REQUIRED",
-            "batch.size" : "10",
-            "Port" : "5672",
-            "cert-authentication" : "false",
-            "auto.acknowledge" : "false",
-            "Host Name" : "localhost"
-          },
-          "propertyDescriptors" : {
-            "AMQP Version" : {
-              "displayName" : "AMQP Version",
-              "identifiesControllerService" : false,
-              "name" : "AMQP Version",
-              "sensitive" : false
-            },
-            "ssl-context-service" : {
-              "displayName" : "SSL Context Service",
-              "identifiesControllerService" : true,
-              "name" : "ssl-context-service",
-              "sensitive" : false
-            },
-            "Virtual Host" : {
-              "displayName" : "Virtual Host",
-              "identifiesControllerService" : false,
-              "name" : "Virtual Host",
-              "sensitive" : false
-            },
-            "User Name" : {
-              "displayName" : "User Name",
-              "identifiesControllerService" : false,
-              "name" : "User Name",
-              "sensitive" : false
-            },
-            "ssl-client-auth" : {
-              "displayName" : "Client Auth",
-              "identifiesControllerService" : false,
-              "name" : "ssl-client-auth",
-              "sensitive" : false
-            },
-            "batch.size" : {
-              "displayName" : "Batch Size",
-              "identifiesControllerService" : false,
-              "name" : "batch.size",
-              "sensitive" : false
-            },
-            "Port" : {
-              "displayName" : "Port",
-              "identifiesControllerService" : false,
-              "name" : "Port",
-              "sensitive" : false
-            },
-            "cert-authentication" : {
-              "displayName" : "Use Certificate Authentication",
-              "identifiesControllerService" : false,
-              "name" : "cert-authentication",
-              "sensitive" : false
-            },
-            "auto.acknowledge" : {
-              "displayName" : "Auto-Acknowledge messages",
-              "identifiesControllerService" : false,
-              "name" : "auto.acknowledge",
-              "sensitive" : false
-            },
-            "Host Name" : {
-              "displayName" : "Host Name",
-              "identifiesControllerService" : false,
-              "name" : "Host Name",
-              "sensitive" : false
-            },
-            "Queue" : {
-              "displayName" : "Queue",
-              "identifiesControllerService" : false,
-              "name" : "Queue",
-              "sensitive" : false
-            },
-            "Password" : {
-              "displayName" : "Password",
-              "identifiesControllerService" : false,
-              "name" : "Password",
-              "sensitive" : true
-            }
-          },
-          "runDurationMillis" : 0,
-          "scheduledState" : "ENABLED",
-          "schedulingPeriod" : "0 sec",
-          "schedulingStrategy" : "TIMER_DRIVEN",
-          "style" : { },
-          "type" : "org.apache.nifi.amqp.processors.ConsumeAMQP",
+          "type" : "org.apache.nifi.processors.standard.Base64EncodeContent",
           "yieldDuration" : "1 sec"
         } ],
         "remoteProcessGroups" : [ ],
