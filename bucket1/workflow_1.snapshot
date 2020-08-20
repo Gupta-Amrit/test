@@ -22,7 +22,45 @@
           "y" : 120.0
         },
         "processGroups" : [ ],
-        "processors" : [ ],
+        "processors" : [ {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "dec229b9-ab08-3824-a48e-1e593c26ef8e",
+          "identifier" : "a35ac019-575a-3659-a5ee-ce7c92300c05",
+          "name" : "Base64EncodeContent",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 426.0,
+            "y" : 155.0
+          },
+          "properties" : {
+            "Mode" : "Encode"
+          },
+          "propertyDescriptors" : {
+            "Mode" : {
+              "displayName" : "Mode",
+              "identifiesControllerService" : false,
+              "name" : "Mode",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.Base64EncodeContent",
+          "yieldDuration" : "1 sec"
+        } ],
         "remoteProcessGroups" : [ ],
         "variables" : { }
       },
