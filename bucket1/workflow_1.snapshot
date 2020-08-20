@@ -11,15 +11,15 @@
         "connections" : [ ],
         "controllerServices" : [ ],
         "funnels" : [ ],
-        "identifier" : "c7a28603-faa5-3968-9067-be1605d21a9a",
+        "identifier" : "dec229b9-ab08-3824-a48e-1e593c26ef8e",
         "inputPorts" : [ ],
         "labels" : [ ],
         "name" : "workflow1",
         "outputPorts" : [ ],
         "parameterContextName" : "paramter-bucket",
         "position" : {
-          "x" : 376.0,
-          "y" : 48.0
+          "x" : 392.0,
+          "y" : 120.0
         },
         "processGroups" : [ ],
         "processors" : [ {
@@ -34,7 +34,7 @@
           "componentType" : "PROCESSOR",
           "concurrentlySchedulableTaskCount" : 1,
           "executionNode" : "ALL",
-          "groupIdentifier" : "c7a28603-faa5-3968-9067-be1605d21a9a",
+          "groupIdentifier" : "dec229b9-ab08-3824-a48e-1e593c26ef8e",
           "identifier" : "a35ac019-575a-3659-a5ee-ce7c92300c05",
           "name" : "Base64EncodeContent",
           "penaltyDuration" : "30 sec",
@@ -60,145 +60,6 @@
           "style" : { },
           "type" : "org.apache.nifi.processors.standard.Base64EncodeContent",
           "yieldDuration" : "1 sec"
-        }, {
-          "autoTerminatedRelationships" : [ ],
-          "bulletinLevel" : "WARN",
-          "bundle" : {
-            "artifact" : "nifi-cdc-mysql-nar",
-            "group" : "org.apache.nifi",
-            "version" : "1.11.4"
-          },
-          "comments" : "",
-          "componentType" : "PROCESSOR",
-          "concurrentlySchedulableTaskCount" : 1,
-          "executionNode" : "ALL",
-          "groupIdentifier" : "c7a28603-faa5-3968-9067-be1605d21a9a",
-          "identifier" : "60c62026-e2c6-3be8-bbc7-87e690720bb0",
-          "name" : "CaptureChangeMySQL",
-          "penaltyDuration" : "30 sec",
-          "position" : {
-            "x" : 251.00002996788987,
-            "y" : 88.00002588065325
-          },
-          "properties" : {
-            "capture-change-mysql-include-ddl-events" : "false",
-            "capture-change-mysql-driver-class" : "com.mysql.jdbc.Driver",
-            "capture-change-mysql-include-begin-commit" : "false",
-            "capture-change-mysql-retrieve-all-records" : "true",
-            "capture-change-mysql-state-update-interval" : "0 seconds",
-            "capture-change-mysql-max-wait-time" : "30 seconds"
-          },
-          "propertyDescriptors" : {
-            "capture-change-mysql-include-ddl-events" : {
-              "displayName" : "Include DDL Events",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-include-ddl-events",
-              "sensitive" : false
-            },
-            "capture-change-mysql-db-name-pattern" : {
-              "displayName" : "Database/Schema Name Pattern",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-db-name-pattern",
-              "sensitive" : false
-            },
-            "capture-change-mysql-dist-map-cache-client" : {
-              "displayName" : "Distributed Map Cache Client",
-              "identifiesControllerService" : true,
-              "name" : "capture-change-mysql-dist-map-cache-client",
-              "sensitive" : false
-            },
-            "capture-change-mysql-init-seq-id" : {
-              "displayName" : "Initial Sequence ID",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-init-seq-id",
-              "sensitive" : false
-            },
-            "capture-change-mysql-name-pattern" : {
-              "displayName" : "Table Name Pattern",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-name-pattern",
-              "sensitive" : false
-            },
-            "capture-change-mysql-driver-class" : {
-              "displayName" : "MySQL Driver Class Name",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-driver-class",
-              "sensitive" : false
-            },
-            "capture-change-mysql-driver-locations" : {
-              "displayName" : "MySQL Driver Location(s)",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-driver-locations",
-              "sensitive" : false
-            },
-            "capture-change-mysql-include-begin-commit" : {
-              "displayName" : "Include Begin/Commit Events",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-include-begin-commit",
-              "sensitive" : false
-            },
-            "capture-change-mysql-server-id" : {
-              "displayName" : "Server ID",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-server-id",
-              "sensitive" : false
-            },
-            "capture-change-mysql-init-binlog-filename" : {
-              "displayName" : "Initial Binlog Filename",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-init-binlog-filename",
-              "sensitive" : false
-            },
-            "capture-change-mysql-init-binlog-position" : {
-              "displayName" : "Initial Binlog Position",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-init-binlog-position",
-              "sensitive" : false
-            },
-            "capture-change-mysql-hosts" : {
-              "displayName" : "MySQL Hosts",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-hosts",
-              "sensitive" : false
-            },
-            "capture-change-mysql-username" : {
-              "displayName" : "Username",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-username",
-              "sensitive" : false
-            },
-            "capture-change-mysql-retrieve-all-records" : {
-              "displayName" : "Retrieve All Records",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-retrieve-all-records",
-              "sensitive" : false
-            },
-            "capture-change-mysql-state-update-interval" : {
-              "displayName" : "State Update Interval",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-state-update-interval",
-              "sensitive" : false
-            },
-            "capture-change-mysql-password" : {
-              "displayName" : "Password",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-password",
-              "sensitive" : true
-            },
-            "capture-change-mysql-max-wait-time" : {
-              "displayName" : "Max Wait Time",
-              "identifiesControllerService" : false,
-              "name" : "capture-change-mysql-max-wait-time",
-              "sensitive" : false
-            }
-          },
-          "runDurationMillis" : 0,
-          "scheduledState" : "ENABLED",
-          "schedulingPeriod" : "0 sec",
-          "schedulingStrategy" : "TIMER_DRIVEN",
-          "style" : { },
-          "type" : "org.apache.nifi.cdc.mysql.processors.CaptureChangeMySQL",
-          "yieldDuration" : "1 sec"
         } ],
         "remoteProcessGroups" : [ ],
         "variables" : { }
@@ -211,12 +72,7 @@
             "description" : "",
             "name" : "bucket",
             "sensitive" : false,
-            "value" : "prod"
-          }, {
-            "description" : "",
-            "name" : "env",
-            "sensitive" : false,
-            "value" : "sit"
+            "value" : "SIT"
           } ]
         }
       }
