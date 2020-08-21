@@ -16,12 +16,164 @@
         "labels" : [ ],
         "name" : "demo PG",
         "outputPorts" : [ ],
+        "parameterContextName" : "paramter-demo",
         "position" : {
           "x" : 448.0,
           "y" : 128.0
         },
         "processGroups" : [ ],
         "processors" : [ {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-aws-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "338061f3-98b9-389a-9d49-2400bc1e45df",
+          "identifier" : "e7eba0c4-6714-3b37-8f37-73b8aa7a94f5",
+          "name" : "FetchS3Object",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 388.0,
+            "y" : 77.0
+          },
+          "properties" : {
+            "requester-pays" : "false",
+            "Object Key" : "${filename}",
+            "Signer Override" : "Default Signature",
+            "Bucket" : "#{env}",
+            "Communications Timeout" : "30 secs",
+            "Region" : "us-west-2"
+          },
+          "propertyDescriptors" : {
+            "Proxy Host" : {
+              "displayName" : "Proxy Host",
+              "identifiesControllerService" : false,
+              "name" : "Proxy Host",
+              "sensitive" : false
+            },
+            "Access Key" : {
+              "displayName" : "Access Key ID",
+              "identifiesControllerService" : false,
+              "name" : "Access Key",
+              "sensitive" : true
+            },
+            "proxy-configuration-service" : {
+              "displayName" : "Proxy Configuration Service",
+              "identifiesControllerService" : true,
+              "name" : "proxy-configuration-service",
+              "sensitive" : false
+            },
+            "Endpoint Override URL" : {
+              "displayName" : "Endpoint Override URL",
+              "identifiesControllerService" : false,
+              "name" : "Endpoint Override URL",
+              "sensitive" : false
+            },
+            "requester-pays" : {
+              "displayName" : "Requester Pays",
+              "identifiesControllerService" : false,
+              "name" : "requester-pays",
+              "sensitive" : false
+            },
+            "Object Key" : {
+              "displayName" : "Object Key",
+              "identifiesControllerService" : false,
+              "name" : "Object Key",
+              "sensitive" : false
+            },
+            "AWS Credentials Provider service" : {
+              "displayName" : "AWS Credentials Provider service",
+              "identifiesControllerService" : true,
+              "name" : "AWS Credentials Provider service",
+              "sensitive" : false
+            },
+            "SSL Context Service" : {
+              "displayName" : "SSL Context Service",
+              "identifiesControllerService" : true,
+              "name" : "SSL Context Service",
+              "sensitive" : false
+            },
+            "Signer Override" : {
+              "displayName" : "Signer Override",
+              "identifiesControllerService" : false,
+              "name" : "Signer Override",
+              "sensitive" : false
+            },
+            "Bucket" : {
+              "displayName" : "Bucket",
+              "identifiesControllerService" : false,
+              "name" : "Bucket",
+              "sensitive" : false
+            },
+            "Version" : {
+              "displayName" : "Version",
+              "identifiesControllerService" : false,
+              "name" : "Version",
+              "sensitive" : false
+            },
+            "proxy-user-password" : {
+              "displayName" : "Proxy Password",
+              "identifiesControllerService" : false,
+              "name" : "proxy-user-password",
+              "sensitive" : true
+            },
+            "Communications Timeout" : {
+              "displayName" : "Communications Timeout",
+              "identifiesControllerService" : false,
+              "name" : "Communications Timeout",
+              "sensitive" : false
+            },
+            "Region" : {
+              "displayName" : "Region",
+              "identifiesControllerService" : false,
+              "name" : "Region",
+              "sensitive" : false
+            },
+            "Secret Key" : {
+              "displayName" : "Secret Access Key",
+              "identifiesControllerService" : false,
+              "name" : "Secret Key",
+              "sensitive" : true
+            },
+            "Credentials File" : {
+              "displayName" : "Credentials File",
+              "identifiesControllerService" : false,
+              "name" : "Credentials File",
+              "sensitive" : false
+            },
+            "proxy-user-name" : {
+              "displayName" : "Proxy Username",
+              "identifiesControllerService" : false,
+              "name" : "proxy-user-name",
+              "sensitive" : false
+            },
+            "Proxy Host Port" : {
+              "displayName" : "Proxy Host Port",
+              "identifiesControllerService" : false,
+              "name" : "Proxy Host Port",
+              "sensitive" : false
+            },
+            "encryption-service" : {
+              "displayName" : "Encryption Service",
+              "identifiesControllerService" : true,
+              "name" : "encryption-service",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.aws.s3.FetchS3Object",
+          "yieldDuration" : "1 sec"
+        }, {
           "autoTerminatedRelationships" : [ ],
           "bulletinLevel" : "WARN",
           "bundle" : {
@@ -85,12 +237,235 @@
           "style" : { },
           "type" : "org.apache.nifi.processors.standard.AttributesToJSON",
           "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-aws-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "338061f3-98b9-389a-9d49-2400bc1e45df",
+          "identifier" : "23e1207b-d347-3fd4-b56e-fcda63270b83",
+          "name" : "PutDynamoDB",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 295.0,
+            "y" : 100.0
+          },
+          "properties" : {
+            "Hash Key Value Type" : "string",
+            "Character set of document" : "UTF-8",
+            "Batch items for each request (between 1 and 50)" : "1",
+            "Range Key Value" : "${dynamodb.item.range.key.value}",
+            "Communications Timeout" : "30 secs",
+            "Region" : "us-west-2",
+            "Hash Key Value" : "${dynamodb.item.hash.key.value}",
+            "Range Key Value Type" : "string"
+          },
+          "propertyDescriptors" : {
+            "Proxy Host" : {
+              "displayName" : "Proxy Host",
+              "identifiesControllerService" : false,
+              "name" : "Proxy Host",
+              "sensitive" : false
+            },
+            "Table Name" : {
+              "displayName" : "Table Name",
+              "identifiesControllerService" : false,
+              "name" : "Table Name",
+              "sensitive" : false
+            },
+            "Hash Key Value Type" : {
+              "displayName" : "Hash Key Value Type",
+              "identifiesControllerService" : false,
+              "name" : "Hash Key Value Type",
+              "sensitive" : false
+            },
+            "Access Key" : {
+              "displayName" : "Access Key ID",
+              "identifiesControllerService" : false,
+              "name" : "Access Key",
+              "sensitive" : true
+            },
+            "Hash Key Name" : {
+              "displayName" : "Hash Key Name",
+              "identifiesControllerService" : false,
+              "name" : "Hash Key Name",
+              "sensitive" : false
+            },
+            "Character set of document" : {
+              "displayName" : "Character set of document",
+              "identifiesControllerService" : false,
+              "name" : "Character set of document",
+              "sensitive" : false
+            },
+            "proxy-configuration-service" : {
+              "displayName" : "Proxy Configuration Service",
+              "identifiesControllerService" : true,
+              "name" : "proxy-configuration-service",
+              "sensitive" : false
+            },
+            "Batch items for each request (between 1 and 50)" : {
+              "displayName" : "Batch items for each request (between 1 and 50)",
+              "identifiesControllerService" : false,
+              "name" : "Batch items for each request (between 1 and 50)",
+              "sensitive" : false
+            },
+            "Range Key Name" : {
+              "displayName" : "Range Key Name",
+              "identifiesControllerService" : false,
+              "name" : "Range Key Name",
+              "sensitive" : false
+            },
+            "AWS Credentials Provider service" : {
+              "displayName" : "AWS Credentials Provider service",
+              "identifiesControllerService" : true,
+              "name" : "AWS Credentials Provider service",
+              "sensitive" : false
+            },
+            "SSL Context Service" : {
+              "displayName" : "SSL Context Service",
+              "identifiesControllerService" : true,
+              "name" : "SSL Context Service",
+              "sensitive" : false
+            },
+            "Range Key Value" : {
+              "displayName" : "Range Key Value",
+              "identifiesControllerService" : false,
+              "name" : "Range Key Value",
+              "sensitive" : false
+            },
+            "proxy-user-password" : {
+              "displayName" : "Proxy Password",
+              "identifiesControllerService" : false,
+              "name" : "proxy-user-password",
+              "sensitive" : true
+            },
+            "Communications Timeout" : {
+              "displayName" : "Communications Timeout",
+              "identifiesControllerService" : false,
+              "name" : "Communications Timeout",
+              "sensitive" : false
+            },
+            "Region" : {
+              "displayName" : "Region",
+              "identifiesControllerService" : false,
+              "name" : "Region",
+              "sensitive" : false
+            },
+            "Secret Key" : {
+              "displayName" : "Secret Access Key",
+              "identifiesControllerService" : false,
+              "name" : "Secret Key",
+              "sensitive" : true
+            },
+            "Credentials File" : {
+              "displayName" : "Credentials File",
+              "identifiesControllerService" : false,
+              "name" : "Credentials File",
+              "sensitive" : false
+            },
+            "Hash Key Value" : {
+              "displayName" : "Hash Key Value",
+              "identifiesControllerService" : false,
+              "name" : "Hash Key Value",
+              "sensitive" : false
+            },
+            "Json Document attribute" : {
+              "displayName" : "Json Document attribute",
+              "identifiesControllerService" : false,
+              "name" : "Json Document attribute",
+              "sensitive" : false
+            },
+            "Range Key Value Type" : {
+              "displayName" : "Range Key Value Type",
+              "identifiesControllerService" : false,
+              "name" : "Range Key Value Type",
+              "sensitive" : false
+            },
+            "proxy-user-name" : {
+              "displayName" : "Proxy Username",
+              "identifiesControllerService" : false,
+              "name" : "proxy-user-name",
+              "sensitive" : false
+            },
+            "Proxy Host Port" : {
+              "displayName" : "Proxy Host Port",
+              "identifiesControllerService" : false,
+              "name" : "Proxy Host Port",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.aws.dynamodb.PutDynamoDB",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-ccda-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "338061f3-98b9-389a-9d49-2400bc1e45df",
+          "identifier" : "ac76cd6d-d070-3576-a567-12c3c47bf1c6",
+          "name" : "ExtractCCDAAttributes",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 309.0,
+            "y" : 14.0
+          },
+          "properties" : {
+            "skip-validation" : "true"
+          },
+          "propertyDescriptors" : {
+            "skip-validation" : {
+              "displayName" : "Skip Validation",
+              "identifiesControllerService" : false,
+              "name" : "skip-validation",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.ccda.ExtractCCDAAttributes",
+          "yieldDuration" : "1 sec"
         } ],
         "remoteProcessGroups" : [ ],
         "variables" : { }
       },
       "flowEncodingVersion" : "1.0",
-      "parameterContexts" : { }
+      "parameterContexts" : {
+        "paramter-demo" : {
+          "name" : "paramter-demo",
+          "parameters" : [ {
+            "description" : "",
+            "name" : "env",
+            "sensitive" : false,
+            "value" : "SIT"
+          }, {
+            "description" : "",
+            "name" : "key",
+            "sensitive" : true
+          } ]
+        }
+      }
     }
   }
 }
