@@ -408,6 +408,44 @@
           "style" : { },
           "type" : "org.apache.nifi.processors.aws.dynamodb.PutDynamoDB",
           "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-ccda-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "338061f3-98b9-389a-9d49-2400bc1e45df",
+          "identifier" : "ac76cd6d-d070-3576-a567-12c3c47bf1c6",
+          "name" : "ExtractCCDAAttributes",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 309.0,
+            "y" : 14.0
+          },
+          "properties" : {
+            "skip-validation" : "true"
+          },
+          "propertyDescriptors" : {
+            "skip-validation" : {
+              "displayName" : "Skip Validation",
+              "identifiesControllerService" : false,
+              "name" : "skip-validation",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.ccda.ExtractCCDAAttributes",
+          "yieldDuration" : "1 sec"
         } ],
         "remoteProcessGroups" : [ ],
         "variables" : { }
@@ -421,6 +459,10 @@
             "name" : "env",
             "sensitive" : false,
             "value" : "SIT"
+          }, {
+            "description" : "",
+            "name" : "key",
+            "sensitive" : true
           } ]
         }
       }
