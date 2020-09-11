@@ -7,13 +7,12 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
-
+  name: Azure Pipelines
 steps:
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      
-      echo 'Hello world'
+- bash: |
+   # Write your commands here
+   
+   echo 'Hello world'
+   echo "bye"
+  displayName: 'Bash Script'
+
