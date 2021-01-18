@@ -1,0 +1,206 @@
+apiVersion : kyma-project
+kind : Function
+metadata : 
+  name : addToCart
+  namespace : dev-environment
+  labels : 
+    app : addToCart
+    example : addToCart
+spec : 
+  deps : |-
+    {
+      "name" : "addToCart",
+      "version" : "1.0.0",
+      "dependencies" : {
+        "axios" : "^0.21.0"
+      },
+      "buildParameters" : {
+        "enable_api" : true
+      }
+    }
+  maxReplicas : 1
+  minReplicas : 1
+  resources : 
+    limits : 
+      cpu : 100m
+      memory : 128Mi
+    requests : 
+      cpu : 10m
+      memory : 16Mi
+  source : |-
+    const axios = require('axios')
+
+    module.exports = {
+      main : async function (event, context) {
+        /* Import Frontend Data */
+        let frontend_data = event.data
+        let headers = extractHeaders(event.extensions.request.headers)
+
+        let bundles = frontend_data.bundles
+        for ( let i in bundles ) {
+          let orderEntries = bundles[i].orderEntries
+          for ( let j in orderEntries ) {
+            let productId = orderEntries[j].productId
+            let storeIds = orderEntries[j].storeIds
+            let quantity = orderEntries[j].quantity
+
+            /* Construct Request-Body for InventoryStatus API */
+            let inventory_request = {
+              stockDetails : [
+                {
+                  productCode : productId,
+                  storeWareHouseIds : storeIds
+                }
+              ]
+            }
+            /* Call InventoryStatus API */
+            let inventory_data = JSON.stringify(inventory_request)
+            var inventory_config = {
+              method : 'post',
+              url : 'http://inventory.dev-r2-uc.tatadigital.com/inventory/status',
+              headers : {
+                "X-ProgramID" : headers['x-programid'],
+                "Content-Type" : headers['content-type']
+              },
+              data : inventory_data
+            }
+
+            let frontend_response = axios(inventory_config)
+            .then(function (response) {
+              /* Get Inventory Response */
+              let inventory_response = response.data
+              let inventory_response_data = inventory_response.data
+
+              for ( let k in inventory_response_data ) {
+                let required_response = {productCode : inventory_response_data[k].productCode, inStockStatus : false}
+
+                let check_stock = inventory_response_data.some(function (object, index) {
+                  if (object.inStockStatus === inventory_response_data.inStockStatus) {
+                    return true
+                  }
+                  return false
+                })
+                
+                /* Check availability of product */
+                if (check_stock == true) {
+                  let missing_product = inventory_response_data.filter(function(object) {
+                    if (object.inStockStatus === required_response.inStockStatus) {
+                      return object
+                    }
+                  })
+
+                  for ( let m in missing_product) {
+                    let missing_product_error = {
+                      status : 500,
+                      message : "ERROR",
+                      error : {
+                        message : `Sorry! Inventory is not available for Product ${missing_product[m].productCode}` 
+                      },
+                      code : "ERR001"
+                    }
+                    return missing_product_error
+                  }
+                }
+
+                /* Check wheather enough stock is available or not */
+                else if (quantity > inventory_response_data[k].qty) {
+                  let less_product = {
+                    status : 500,
+                    message : "ERROR",
+                    error : {
+                      message : `Sorry! Not enough stock for Product ${inventory_response_data[k].productCode}`
+                    },
+                    code : "ERR002"
+                  }
+                  return less_product
+                }
+
+                /* Call AddToCart API */
+                else {
+                  let addToCart_data = JSON.stringify(frontend_data)
+                  var addToCart_config = {
+                    method : 'post',
+                    url : 'http://caas.dev-r2-uc.tatadigital.com/carts/addToCart',
+                    headers : {
+                      "customerId" : headers['customerid'],
+                      "X-ProgramID" : headers['x-programid'],
+                      "Content-Type" : headers['content-type']
+                    },
+                    data : addToCart_data
+                  }
+
+                  let cart_response = axios(addToCart_config)
+                  .then(function (response) {
+                    return response.data
+                  })
+                  .catch(function (error) {
+                    if (error) {
+                      /* Call UpdateCart API */
+                      let updateCart_data = JSON.stringify(frontend_data)
+                      var updateCart_config = {
+                        method : 'post',
+                        url : 'http://caas.dev-r2-uc.tatadigital.com/carts/updateCart',
+                        headers : {
+                          "customerId" : headers['customerid'],
+                          "X-ProgramID" : headers['x-programid'],
+                          "Content-Type" : headers['content-type']
+                        },
+                        data : updateCart_data
+                      }
+
+                      let updateCart_response = axios(updateCart_config)
+                      .then(function (response) {
+                        return response.data
+                      })
+                      .catch(function (error) {
+                        if (error) {
+                          let cart_error = {
+                            status : 500,
+                            message : "ERROR",
+                            error : {
+                              message : "Please check input credentials"
+                            },
+                            code : "ERR003"
+                          }
+                          return cart_error
+                        }
+                      })
+                      return updateCart_response
+                    }
+                  })
+                  return cart_response
+                }
+              }
+            })
+            .catch(function (error) {
+              if (error) {
+                let error = {
+                  status : 400,
+                  message : "BAD REQUEST",
+                  error : {
+                    message : "Please check inventory details"
+                  },
+                  code : "ERR004"
+                }
+                return error
+              }
+            })
+            return frontend_response
+          }
+        }
+      }
+    }
+
+    /* Extract Headers */
+    function extractHeaders (headers) {
+      let traceHeaders = ["x-programid", "customerid", "content-type"]
+      var header_map = {}
+      for ( let h in traceHeaders ) {
+        let headerName = traceHeaders[h]
+        let headerValue = headers[headerName]
+        if (headerValue !== undefined) {
+          header_map[headerName] = headerValue
+        }
+      }
+      return header_map
+    }
