@@ -1,0 +1,18 @@
+apiVersions : v1
+kind : Service
+metadata : 
+  name : addToCart
+  namespace : dev-environment
+  labels :
+    app : addToCart
+    example : addToCart
+spec :
+  type : ClusterIp
+  ports : 
+    - name : https
+      port : 80
+      protocol : TCP
+      targetPort : 8080
+  selector :
+    app : addToCart
+    example : addToCart
