@@ -1,0 +1,32 @@
+apiVersion : app/v1
+kind : Deployment
+metadata : 
+  name : addToCart
+  namespace : dev-environment
+  labels : 
+    app : addToCart
+    example : addToCart
+spec : 
+  replicas : 1
+  selector : 
+    matchLabels : 
+      app : addToCart
+      example : addToCart
+  template : 
+    metadata :
+      labels : 
+        app : addToCart
+        example : addToCart
+    spec : 
+      containers :
+        - name : addToCart
+          resources : 
+            limits :
+              cpu : 100m
+              memory : 128Mi
+            requests : 
+              cpu : 10m
+              memory : 16Mi
+          env : 
+            - name : APP_PORT
+              value : "8080"
