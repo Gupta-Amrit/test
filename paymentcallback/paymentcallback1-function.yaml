@@ -1,14 +1,14 @@
 apiVersion: serverless.kyma-project.io/v1alpha1
 kind: Function
 metadata:
-  name: paymentcallback
+  name: paymentcallback1
   namespace: dev-environment
   labels:
-    app: paymentcallback
+    app: paymentcallback1
 spec:
   deps: |-
 { 
-  "name": "paymentcallback",
+  "name": "paymentcallback1",
   "version": "1.0.0",
   "dependencies": {
     "axios" : "^0.21.0"
