@@ -2,7 +2,7 @@ apiVersion: serverless.kyma-project.io/v1alpha1
 kind: Function
 metadata:
   name: paymentcallback1
-  namespace: #{NAMESPACE_NAME}#
+  namespace: #{POD_NAMESPACE_NAME}#
   labels:
     app: paymentcallback1
 spec:
