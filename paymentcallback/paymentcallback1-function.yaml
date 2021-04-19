@@ -687,4 +687,27 @@ module.exports = {
     return fetchCart_response
   }
 }
-
+---
+apiVersion : gateway.kyma-project.io/v1alpha1
+kind : APIRule
+metadata :
+  name : paymentcallback1
+  namespace : #{POD_NAMESPACE_NAME}#
+spec :
+  gateway : kyma-gateway.kyma-system.svc.cluster.local
+  rules :
+    - accessStrategies :
+        - config : {}
+          handler : noop
+      methods : 
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+        - HEAD
+      path : /.*
+  service :
+    host : https://paymentcallback1.#{POD_SS_DOMAIN}#-ao.tatadigital.com
+    name : paymentcallback1
+    port : 80
