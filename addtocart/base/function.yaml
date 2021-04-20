@@ -15,15 +15,6 @@ spec:
           "enable_api" : true
         }
       }
-  maxReplicas: 1
-  minReplicas: 1
-  resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
-    requests:
-      cpu: 50m
-      memory: 64Mi
   runtime: nodejs12
   source: |-
       const axios = require('axios')
