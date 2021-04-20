@@ -5,7 +5,7 @@ bases:
 - ../../base
 
 resources:
-  - APIRule.yaml
+- ../APIRule.yaml
 
 patchesStrategicMerge:
 - custom-env.yaml
