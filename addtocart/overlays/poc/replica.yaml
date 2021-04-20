@@ -1,0 +1,14 @@
+apiVersion: serverless.kyma-project.io/v1alpha1
+kind: Function
+metadata:
+  name: addtocart
+spec:
+  maxReplicas: #{POD_MAX_COUNT}#
+  minReplicas: #{POD_MIN_COUNT}#
+  resources:
+    limits:
+      cpu: "#{POD_LIMIT_CPU}#"
+      memory: "#{POD_LIMIT_MEM}#"
+    requests:
+      cpu: "#{POD_REQ_CPU}#"
+      memory: "#{POD_REQ_MEM}#"
