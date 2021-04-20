@@ -17,6 +17,6 @@ spec:
     - HEAD
     path: /.*
   service:
-    host: addtocart.#{SS_DOMAIN}#-ao.tatadigital.com
+    host: addtocart.#{POD_SS_DOMAIN}#-ao.tatadigital.com
     name: addtocart
     port: 80
