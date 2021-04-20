@@ -1,0 +1,12 @@
+apiVersion: serverless.kyma-project.io/v1alpha1
+kind: Function
+metadata:
+  name: addtocart
+spec:
+  env:
+  - name: content
+    value: application/json
+  - name: channel
+    value: App
+  - name: x_programid
+    value: tcp
