@@ -1,7 +1,7 @@
 apiVersion: serverless.kyma-project.io/v1alpha1
 kind: Function
 metadata:
-  name: addtocart
+  name: addtocart-poc
 spec:
   maxReplicas: #{POD_MAX_COUNT}#
   minReplicas: #{POD_MIN_COUNT}#
