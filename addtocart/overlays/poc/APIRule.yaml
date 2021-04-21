@@ -1,7 +1,7 @@
 apiVersion: gateway.kyma-project.io/v1alpha1
 kind: APIRule
 metadata:
-  name: addtocart
+  name: addtocart-poc
 spec:
   gateway: kyma-gateway.kyma-system.svc.cluster.local
   rules:
@@ -17,6 +17,6 @@ spec:
     - HEAD
     path: /.*
   service:
-    host: addtocart.#{POD_SS_DOMAIN}#-ao.tatadigital.com
-    name: addtocart
+    host: addtocart-poc.#{POD_SS_DOMAIN}#-ao.tatadigital.com
+    name: addtocart-poc
     port: 80
