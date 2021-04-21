@@ -1,11 +1,11 @@
 apiVersion: serverless.kyma-project.io/v1alpha1
 kind: Function
 metadata:
-  name: addtocart
+  name: addtocart-poc
 spec:
   deps: |-
       {
-        "name": "addtocart",
+        "name": "addtocart-poc",
         "version": "1.0.0",
         "dependencies": {
           "axios" : "^0.21.0",
@@ -420,29 +420,29 @@ spec:
                     }
 
                     else if (overrideBundle === "null") {
-                      /* Call AddToCart API */
-                      let addToCart_data = JSON.stringify(frontend_data)
+                      /* Call addtocart-poc API */
+                      let addtocart-poc_data = JSON.stringify(frontend_data)
 
-                      var addToCart_config = {
+                      var addtocart-poc_config = {
                         method : 'post',
-                        url : 'http://caas.dev-r2-uc.tatadigital.com/carts/addToCart',
+                        url : 'http://caas.dev-r2-uc.tatadigital.com/carts/addtocart-poc',
                         headers : {
                           "X-ProgramID" : headers['x-programid'],
                           "customerId" : headers['customerid'],
                           "Content-Type" : headers['content-type']
                         },
-                        data : addToCart_data
+                        data : addtocart-poc_data
                       }
 
-                      let addToCart_response = axios(addToCart_config)
+                      let addtocart-poc_response = axios(addtocart-poc_config)
                       .then(function (response) {
-                        /* Get AddToCart response */
-                        let addToCart_response = response.data
-                        let addToCart_bundles = addToCart_response.data.cart.bundles
+                        /* Get addtocart-poc response */
+                        let addtocart-poc_response = response.data
+                        let addtocart-poc_bundles = addtocart-poc_response.data.cart.bundles
 
                         for (let i=0; i<edd_response_data.length; i++) {
-                          for (let j=0; j<addToCart_bundles.length; j++) {
-                            let orderEntries = addToCart_bundles[j].orderEntries
+                          for (let j=0; j<addtocart-poc_bundles.length; j++) {
+                            let orderEntries = addtocart-poc_bundles[j].orderEntries
                             for (let k=0; k<orderEntries.length; k++) {
                               if (orderEntries[k].productId == edd_response_data[i].productId) {
                                 let date = {"expectedDeliveryDate" : edd_response_data[i].edd}
@@ -452,23 +452,23 @@ spec:
                           }
                         }
 
-                        /* Final AddToCart response */
-                        let final_addToCart_response = {
-                          status : addToCart_response.status,
-                          message : addToCart_response.message,
+                        /* Final addtocart-poc response */
+                        let final_addtocart-poc_response = {
+                          status : addtocart-poc_response.status,
+                          message : addtocart-poc_response.message,
                           data : {
                             cart : {
-                              _id : addToCart_response.data.cart._id,
-                              customerId : addToCart_response.data.cart.customerId,
-                              code : addToCart_response.data.cart.code,
-                              totalPrice : addToCart_response.data.cart.totalPrice,
-                              totalDiscounts : addToCart_response.data.cart.totalDiscounts,
-                              subTotal : addToCart_response.data.cart.subTotal,
-                              bundles : addToCart_bundles
+                              _id : addtocart-poc_response.data.cart._id,
+                              customerId : addtocart-poc_response.data.cart.customerId,
+                              code : addtocart-poc_response.data.cart.code,
+                              totalPrice : addtocart-poc_response.data.cart.totalPrice,
+                              totalDiscounts : addtocart-poc_response.data.cart.totalDiscounts,
+                              subTotal : addtocart-poc_response.data.cart.subTotal,
+                              bundles : addtocart-poc_bundles
                             }
                           }
                         }
-                        return final_addToCart_response
+                        return final_addtocart-poc_response
                       })
                       .catch(function (error) {
                         if (error.response.data.error.code === "ERR006") {
@@ -494,7 +494,7 @@ spec:
                           return addCart_error
                         }
                       })
-                      return addToCart_response
+                      return addtocart-poc_response
                     }
                   })
                   .catch(function (error) {
