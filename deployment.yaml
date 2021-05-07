@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ms
-        image: acrtddevdecisha01.azurecr.io/tcs/demo:28127
+        image: acrtddevdecisha01.azurecr.io/tcs/demo:#{BUILD_BUILDID}#
         ports:
         - containerPort: 8080
 ---
